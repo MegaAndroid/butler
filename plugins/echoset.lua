@@ -6,7 +6,7 @@ do
     file:close()
 end   
 function run(msg, matches)
-  if matches[1] == "echo>" and is_sudo(msg) then --Sudo only !
+  if matches[1] == "echo+" and is_sudo(msg) then --Sudo only !
  
          local name = matches[2]
         local text = matches[3]
@@ -15,7 +15,7 @@ function run(msg, matches)
    end
 return {
   patterns = {
-  "^[/!](echo>) ([^%s]+) (.+)$"
+  "^[/!](echo+) ([^%s]+) (.+)$"
 
   },
   run = run
