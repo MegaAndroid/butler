@@ -1,5 +1,5 @@
 local function run(msg, matches)
-  if matches[1] == "echo>" then
+  if matches[1] == "echo+" then
     local file = matches[2]
     if is_sudo(msg) then -- Sudo only !
       local receiver = get_receiver(msg)
@@ -10,7 +10,7 @@ end
 
 return {
   patterns = {
-    "^[/!](echo>) ([^%s]+) (.+)$"
+    "^[/!](echo+) ([^%s]+) (.+)$"
   },
   run = run
 }
